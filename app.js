@@ -65,7 +65,7 @@ app.delete('/usuarios/:nombre', (req, res) => {
         return res.status(404).json({ mensaje: 'Usuario no encontrado' });
     }
 
-    usuarios = usuarios.filter(u => u.nombre.toLowerCase() !== nombre.toLowerCase());
+    usuarios = usuarios.filter(u => u.nombre !== nombre);
     res.json({ mensaje: `Usuario ${nombre} eliminado` });
 });
 
